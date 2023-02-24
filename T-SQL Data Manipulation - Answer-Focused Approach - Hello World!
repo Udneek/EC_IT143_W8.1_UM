@@ -96,7 +96,7 @@ GO
 
 
 /*****************************************************************************************************************
----NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s5.1_UM.sq
 ----PURPOSE: Hello world--- Turn the view into a table
 
 ----MODIFICATION LOG:
@@ -121,7 +121,7 @@ GO
 
 
 /*****************************************************************************************************************
----NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s5.2_UM.sq
 ----PURPOSE: Hello world--- Turn the view into a table
 
 ----MODIFICATION LOG:
@@ -152,7 +152,7 @@ GO
 
 
 /*****************************************************************************************************************
----NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s6_UM.sq
 ----PURPOSE: Hello world--- Load the table from the View using Ad Hoc SQL script
 
 ----MODIFICATION LOG:
@@ -182,7 +182,7 @@ GO
 
 
 /*****************************************************************************************************************
----NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s7_UM.sq
 ----PURPOSE: Hello world--- turn the Ad Hoc SQL script into a stored procedure
 
 ----MODIFICATION LOG:
@@ -220,7 +220,7 @@ GO
 
 
 /*****************************************************************************************************************
----NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s8_UM.sq
 ----PURPOSE: Hello world--- Call the stored procedure
 
 ----MODIFICATION LOG:
