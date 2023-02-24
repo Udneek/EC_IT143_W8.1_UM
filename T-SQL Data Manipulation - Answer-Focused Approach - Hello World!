@@ -109,7 +109,7 @@ GO
 ----Xm Xs
 
 ----NOTES: 
-----This script is the fifth step in the Answer Focused Approach in T-SQL data manipulation ...
+----This script is the 5.1 step in the Answer Focused Approach in T-SQL data manipulation ...
  
 ----******************************************************************************************************************/
 
@@ -118,7 +118,25 @@ GO
 		INTO dbo.t_hello_world
 		FROM dbo.v_hello_world_load AS v;
 
-	
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- Turn the view into a table
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the 5.2 step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/	
 	
 	DROP VIEW IF EXISTS dbo.v_hello_world_load;
 	GO
