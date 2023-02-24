@@ -1,0 +1,226 @@
+/*****************************************************************************************************************
+NAME:    My Script Name   EC_IT143_W8.1_hello_world_s1_UM.sq
+PURPOSE: Hello world--- Start with a question
+
+MODIFICATION LOG:
+Ver      Date        Author        Description
+-----   ----------   -----------   -------------------------------------------------------------------------------
+1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+RUNTIME: 
+Xm Xs
+
+NOTES:This script is the first step in the Answer Focused Approach in T-SQL data manipulation 
+
+*****************************************************************************************************************
+-- Q1: What is the current date and time?
+
+ 
+
+/*****************************************************************************************************************
+----NAME:    My Script Name   EC_IT143_W8.1_hello_world_s2_UM.sq
+----PURPOSE: Hello world---- Begin creating an answer
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the second step in the Answer Focused Approach in T-SQL data manipulation 
+
+ 
+----******************************************************************************************************************/
+
+-- Q1: What is the current time and date?
+-- A1: Let's confirm from SQL server...
+
+
+
+
+/*****************************************************************************************************************
+----NAME:    My Script Name   EC_IT143_W8._hello_world_s3_UM.sq
+----PURPOSE: Hello world--- Create an Ad hoc SQL query
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the third step in the Answer Focused Approach in T-SQL data manipulation 
+ 
+----******************************************************************************************************************/
+
+		SELECT 'Hello World' AS Message, 
+		GETDATE() AS My_date;
+
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- Turn the AdHoc SQL query into a view
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the fourth step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/
+
+
+		DROP VIEW IF EXISTS dbo.v_hello_world_load;
+GO
+
+		CREATE VIEW dbo.v_hello_world_load
+		AS
+		SELECT 'Hello World' AS Message,
+		GETDATE() AS My_date;
+
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- Turn the view into a table
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the fifth step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/
+
+		SELECT v.my_message
+		, v.current_date_time
+		INTO dbo.t_hello_world
+		FROM dbo.v_hello_world_load AS v;
+
+	
+	
+	DROP VIEW IF EXISTS dbo.v_hello_world_load;
+	GO
+
+		CREATE TABlE dbo.t_hello_world
+			(my_message varchar (25) NOT NULL
+			, current_date_time DATETIME NOT NULL
+								DEFAULT GETDATE()
+			CONSTRAINT PK_t_hello_world PRIMARY KEY CLUSTERED(my_message ASC);
+	GO
+		
+
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- Load the table from the View using Ad Hoc SQL script
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the sixth step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/
+
+		TRUNCATE TABLE dbo.t_hello_world;
+
+			INSERT INTO dbo.t_hello_world
+			SELECT v.my_message
+			, v.current_date_time
+				FROM dbo.v_hello_world_load AS v;
+
+		SELECT t*
+		FROM dbo.t_hello_world AS t;
+		
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- turn the Ad Hoc SQL script into a stored procedure
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the seventh step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/
+
+	CREATE PROCEDURE dbo.usp_hello_world_load AS
+
+			BEGIN
+
+		TRUNCATE TABLE dbo.t_hello_world;
+
+			INSERT INTO dbo.t_hello_world
+			SELECT v.my_message
+			, v.current_date_time
+				FROM dbo.v_hello_world_load AS v;
+
+		SELECT t*
+		FROM dbo.t_hello_world AS t;
+		
+		END;
+
+	GO
+
+
+
+/*****************************************************************************************************************
+---NAME:    My Script Name   EC_IT143_W8._hello_world_s4_UM.sq
+----PURPOSE: Hello world--- Call the stored procedure
+
+----MODIFICATION LOG:
+----Ver      Date        Author             Description
+---------   ----------   -----------   -------------------------------------------------------------------------------
+----1.0     02/22/2023   Uduak Mbaba       1. Built this script for EC IT143
+
+
+----RUNTIME: 
+----Xm Xs
+
+----NOTES: 
+----This script is the last step in the Answer Focused Approach in T-SQL data manipulation ...
+ 
+----******************************************************************************************************************/
+
+
+       EXEC dbo.usp_hello_world_load;
+       
+       
+       
